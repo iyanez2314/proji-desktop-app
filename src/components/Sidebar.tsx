@@ -3,6 +3,7 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import { Toggle } from "@/components/ui/toggle";
 import { Button } from "@/components/ui/button";
+import { DragnDrop } from "@/components/mantine/DragnDrop";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,8 +23,8 @@ import {
 
 export default function Sidebar() {
   return (
-    <div className="w-[275px] flex flex-col border border-slate-800 items-center space-y-10">
-      <div className=" h-[50px] w-full flex justify-between p-3">
+    <div className="w-[275px] flex flex-col border border-slate-800 items-center space-y-10 overflow-auto">
+      <div className=" h-[50px] w-full flex justify-between p-3 mt-6">
         <Sheet>
           <SheetTrigger>
             <Button variant="outline">
@@ -57,6 +58,23 @@ export default function Sidebar() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
+
+      <div className="h-full w-[90%] ">
+        <div className="flex text-white justify-between">
+          <h1 className="font-semibold">All Groups</h1>
+          <p>3</p>
+        </div>
+
+        <hr className="border-white" />
+        <div className="mt-3">
+          <DragnDrop groupName="👷🏼 Work" />
+          <DragnDrop groupName="📈 Personal" />
+          <DragnDrop groupName="😜 Freelance" />
+        </div>
+      </div>
+
+      {/* <div className=" h-1/3 w-[90%]">
+      </div> */}
     </div>
   );
 }
