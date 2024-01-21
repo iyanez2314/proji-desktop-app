@@ -24,8 +24,8 @@ import GroupInputs from "./GroupInputs";
 
 export default function Sidebar() {
   return (
-    <div className="w-[275px] flex flex-col border border-slate-800 items-center space-y-10 overflow-auto">
-      <div className=" h-[50px] w-full flex justify-between p-3 mt-6">
+    <div className="h-full w-[90%]">
+      <div className="w-full flex justify-between p-3 mt-6 overflow-hidden">
         <Sheet>
           <SheetTrigger>
             <ShadButton className="dark:bg-gray-900 bg-white" variant="outline">
@@ -60,36 +60,30 @@ export default function Sidebar() {
         </DropdownMenu>
       </div>
 
-      <div className="h-full w-[90%] overflow-auto">
+      <div className="w-[90%] mt-2">
         <div className="flex text-black dark:text-white justify-between">
           <h1 className="font-semibold">All Groups</h1>
           <p>3</p>
         </div>
-
         <hr className="border-black dark:border-white" />
-        <div className="mt-3">
-          <DragnDrop groupName="👷🏼 Work" />
-          <DragnDrop groupName="📈 Personal" />
-          <DragnDrop groupName="😜 Freelance" />
-          <DragnDrop groupName="👷🏼 Work" />
-          <DragnDrop groupName="📈 Personal" />
-          <DragnDrop groupName="😜 Freelance" />
-          <DragnDrop groupName="👷🏼 Work" />
-          <DragnDrop groupName="📈 Personal" />
-          <DragnDrop groupName="😜 Freelance" />
-          <DragnDrop groupName="👷🏼 Work" />
-          <DragnDrop groupName="📈 Personal" />
-          <DragnDrop groupName="😜 Freelance" />
-          <DragnDrop groupName="👷🏼 Work" />
-          <DragnDrop groupName="📈 Personal" />
-          <DragnDrop groupName="😜 Freelance" />
-          <DragnDrop groupName="👷🏼 Work" />
-          <DragnDrop groupName="📈 Personal" />
-          <DragnDrop groupName="😜 Freelance" />
-          <DragnDrop groupName="👷🏼 Work" />
-          <DragnDrop groupName="📈 Personal" />
-          <DragnDrop groupName="😜 Freelance" />
-        </div>
+      </div>
+
+      <div className="h-5/6 overflow-auto w-[90%]">
+        <DragnDrop groupName="👷🏼 Work" />
+        <DragnDrop groupName="📈 Personal" />
+        <DragnDrop groupName="😜 Freelance" />
+        <DragnDrop groupName="👷🏼 Work" />
+        <DragnDrop groupName="📈 Personal" />
+        <DragnDrop groupName="😜 Freelance" />
+        <DragnDrop groupName="👷🏼 Work" />
+        <DragnDrop groupName="📈 Personal" />
+        <DragnDrop groupName="😜 Freelance" />
+        <DragnDrop groupName="👷🏼 Work" />
+        <DragnDrop groupName="📈 Personal" />
+        <DragnDrop groupName="😜 Freelance" />
+        <DragnDrop groupName="👷🏼 Work" />
+        <DragnDrop groupName="📈 Personal" />
+        <DragnDrop groupName="😜 Freelance" />
       </div>
     </div>
   );
