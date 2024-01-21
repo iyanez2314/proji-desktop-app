@@ -2,7 +2,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { Toggle } from "@/components/ui/toggle";
-import { Button } from "@/components/ui/button";
+import { Button as ShadButton } from "@/components/ui/button";
 import { DragnDrop } from "@/components/mantine/DragnDrop";
 import {
   DropdownMenu,
@@ -20,6 +20,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import GroupInputs from "./GroupInputs";
 
 export default function Sidebar() {
   return (
@@ -27,26 +28,23 @@ export default function Sidebar() {
       <div className=" h-[50px] w-full flex justify-between p-3 mt-6">
         <Sheet>
           <SheetTrigger>
-            <Button variant="outline">
+            <ShadButton variant="outline">
               <Icon icon="lucide:plus" className="text-black" />
-            </Button>
+            </ShadButton>
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
-              <SheetDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </SheetDescription>
+              <SheetTitle>Create A New Group</SheetTitle>
             </SheetHeader>
+            <GroupInputs />
           </SheetContent>
         </Sheet>
 
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <Button variant="outline">
+            <ShadButton variant="outline">
               <Icon icon="lucide:settings" className="text-black" />
-            </Button>
+            </ShadButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -72,9 +70,6 @@ export default function Sidebar() {
           <DragnDrop groupName="😜 Freelance" />
         </div>
       </div>
-
-      {/* <div className=" h-1/3 w-[90%]">
-      </div> */}
     </div>
   );
 }
