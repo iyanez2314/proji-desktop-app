@@ -10,7 +10,7 @@ export default function GroupInputs() {
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <div className="mt-3">
         <Label htmlFor="email">Group Name</Label>
-        <Input type="email" id="email" placeholder="Work" />
+        <Input className="" type="email" id="email" placeholder="Work" />
       </div>
       <div className="my-4">
         <h1 className="font-bold text-lg">
