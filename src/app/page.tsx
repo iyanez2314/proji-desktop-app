@@ -17,7 +17,7 @@ export default function Home() {
         <MainContentHeader />
 
         {/* Urgency & Quick Notes Section*/}
-        <div className="flex justify-evenly  mt-4 ">
+        <div className="flex justify-evenly mt-4 ">
           <div className=" w-1/2 space-y-4 p-4 flex flex-col align-top justify-center ">
             <UrgencyContainer />
             <QuickNotesContainer />
