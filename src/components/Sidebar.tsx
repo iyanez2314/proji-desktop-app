@@ -28,11 +28,11 @@ export default function Sidebar() {
       <div className=" h-[50px] w-full flex justify-between p-3 mt-6">
         <Sheet>
           <SheetTrigger>
-            <ShadButton variant="outline">
-              <Icon icon="lucide:plus" className="text-black" />
+            <ShadButton className="dark:bg-gray-900 bg-white" variant="outline">
+              <Icon icon="lucide:plus" className="dark:text-white text-black" />
             </ShadButton>
           </SheetTrigger>
-          <SheetContent>
+          <SheetContent className="bg-[#ffff] dark:bg-gray-900">
             <SheetHeader>
               <SheetTitle>Create A New Group</SheetTitle>
             </SheetHeader>
@@ -42,8 +42,11 @@ export default function Sidebar() {
 
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <ShadButton variant="outline">
-              <Icon icon="lucide:settings" className="text-black" />
+            <ShadButton className="dark:bg-gray-900 bg-white" variant="outline">
+              <Icon
+                icon="lucide:settings"
+                className="dark:text-white text-black"
+              />
             </ShadButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -57,14 +60,32 @@ export default function Sidebar() {
         </DropdownMenu>
       </div>
 
-      <div className="h-full w-[90%] ">
-        <div className="flex text-white justify-between">
+      <div className="h-full w-[90%] overflow-auto">
+        <div className="flex text-black dark:text-white justify-between">
           <h1 className="font-semibold">All Groups</h1>
           <p>3</p>
         </div>
 
-        <hr className="border-white" />
+        <hr className="border-black dark:border-white" />
         <div className="mt-3">
+          <DragnDrop groupName="👷🏼 Work" />
+          <DragnDrop groupName="📈 Personal" />
+          <DragnDrop groupName="😜 Freelance" />
+          <DragnDrop groupName="👷🏼 Work" />
+          <DragnDrop groupName="📈 Personal" />
+          <DragnDrop groupName="😜 Freelance" />
+          <DragnDrop groupName="👷🏼 Work" />
+          <DragnDrop groupName="📈 Personal" />
+          <DragnDrop groupName="😜 Freelance" />
+          <DragnDrop groupName="👷🏼 Work" />
+          <DragnDrop groupName="📈 Personal" />
+          <DragnDrop groupName="😜 Freelance" />
+          <DragnDrop groupName="👷🏼 Work" />
+          <DragnDrop groupName="📈 Personal" />
+          <DragnDrop groupName="😜 Freelance" />
+          <DragnDrop groupName="👷🏼 Work" />
+          <DragnDrop groupName="📈 Personal" />
+          <DragnDrop groupName="😜 Freelance" />
           <DragnDrop groupName="👷🏼 Work" />
           <DragnDrop groupName="📈 Personal" />
           <DragnDrop groupName="😜 Freelance" />

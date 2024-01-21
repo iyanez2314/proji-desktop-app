@@ -35,16 +35,19 @@ export function DragnDrop({ groupName }: DragnDropProps) {
           // className={cx(classes.item, {
           //   [classes.itemDragging]: snapshot.isDragging,
           // })}
-          className="bg-white p-4 rounded-md shadow-md flex items-center space-x-4 w-full h-[40px]"
+          className="dark:bg-white bg-gray-900 p-4 rounded-md shadow-md flex items-center space-x-4 w-full h-[40px]"
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
         >
-          <Text className={classes.symbol}>
-            <Icon icon="lucide:more-vertical" />
+          <Text className="dark:bg-white bg-gray-900 hover:cursor-pointer">
+            <Icon
+              className="text-white dark:text-black"
+              icon="lucide:more-vertical"
+            />
           </Text>
           <div>
-            <Text>{item.name}</Text>
+            <Text className="text-white dark:text-black">{item.name}</Text>
           </div>
         </div>
       )}
@@ -59,11 +62,11 @@ export function DragnDrop({ groupName }: DragnDropProps) {
     >
       <Accordion type="single" collapsible>
         <AccordionItem value={groupName || ""}>
-          <AccordionTrigger className="text-white">
+          <AccordionTrigger className="dark:text-white text-black">
             {groupName}
           </AccordionTrigger>
           <AccordionContent>
-            <div className="hover:cursor-pointer text-white flex items-center gap-2 p-2">
+            <div className="hover:cursor-pointer dark:text-white text-black flex items-center gap-2 p-2">
               <Icon icon="lucide:plus" />
               <p>Add New Project</p>
             </div>
