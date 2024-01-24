@@ -20,7 +20,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import GroupInputs from "./GroupInputs";
+import HardCoded from "../../HardCoded.json";
+import { GroupData } from "@/lib/hardcodedData";
+import GroupInputsWrapper from "./GroupInputsWrapper";
 
 export default function Sidebar() {
   return (
@@ -36,7 +38,7 @@ export default function Sidebar() {
             <SheetHeader>
               <SheetTitle>Create A New Group</SheetTitle>
             </SheetHeader>
-            <GroupInputs />
+            <GroupInputsWrapper />
           </SheetContent>
         </Sheet>
 
@@ -69,21 +71,9 @@ export default function Sidebar() {
       </div>
 
       <div className="h-5/6 overflow-auto w-[90%]">
-        <DragnDrop groupName="👷🏼 Work" />
-        <DragnDrop groupName="📈 Personal" />
-        <DragnDrop groupName="😜 Freelance" />
-        <DragnDrop groupName="👷🏼 Work" />
-        <DragnDrop groupName="📈 Personal" />
-        <DragnDrop groupName="😜 Freelance" />
-        <DragnDrop groupName="👷🏼 Work" />
-        <DragnDrop groupName="📈 Personal" />
-        <DragnDrop groupName="😜 Freelance" />
-        <DragnDrop groupName="👷🏼 Work" />
-        <DragnDrop groupName="📈 Personal" />
-        <DragnDrop groupName="😜 Freelance" />
-        <DragnDrop groupName="👷🏼 Work" />
-        <DragnDrop groupName="📈 Personal" />
-        <DragnDrop groupName="😜 Freelance" />
+        {HardCoded.map((group: GroupData) => (
+          <DragnDrop group={group} key={group.id} />
+        ))}
       </div>
     </div>
   );

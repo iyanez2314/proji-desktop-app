@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { ThemeProvider } from "@/components/theme.provider";
+import { GroupProvider } from "@/context/GroupContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,16 +23,18 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </MantineProvider>
+        <GroupProvider>
+          <MantineProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </MantineProvider>
+        </GroupProvider>
       </body>
     </html>
   );

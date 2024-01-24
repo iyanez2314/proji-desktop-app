@@ -4,6 +4,7 @@ import { Text } from "@mantine/core";
 import { useListState } from "@mantine/hooks";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import classes from "./DragnDrop.module.css";
+import { GroupData } from "@/lib/hardcodedData";
 
 // Shadcn
 import {
@@ -14,22 +15,22 @@ import {
 } from "@/components/ui/accordion";
 
 interface DragnDropProps {
-  groupName?: string;
+  group?: GroupData;
 }
 
-const data = [
-  { position: 6, mass: 12.011, symbol: "C", name: "Carbon" },
-  { position: 7, mass: 14.007, symbol: "N", name: "Nitrogen" },
-  { position: 39, mass: 88.906, symbol: "Y", name: "Yttrium" },
-  { position: 56, mass: 137.33, symbol: "Ba", name: "Barium" },
-  { position: 58, mass: 140.12, symbol: "Ce", name: "Cerium" },
-];
+// const data = [
+//   { position: 6, mass: 12.011, symbol: "C", name: "Carbon" },
+//   { position: 7, mass: 14.007, symbol: "N", name: "Nitrogen" },
+//   { position: 39, mass: 88.906, symbol: "Y", name: "Yttrium" },
+//   { position: 56, mass: 137.33, symbol: "Ba", name: "Barium" },
+//   { position: 58, mass: 140.12, symbol: "Ce", name: "Cerium" },
+// ];
 
-export function DragnDrop({ groupName }: DragnDropProps) {
-  const [state, handlers] = useListState(data);
+export function DragnDrop({ group }: DragnDropProps) {
+  const [state, handlers] = useListState(group?.projects || []);
 
   const items = state.map((item, index) => (
-    <Draggable key={item.symbol} index={index} draggableId={item.symbol}>
+    <Draggable key={item.id} index={index} draggableId={item.name}>
       {(provided, snapshot) => (
         <div
           // className={cx(classes.item, {
@@ -61,9 +62,9 @@ export function DragnDrop({ groupName }: DragnDropProps) {
       }
     >
       <Accordion type="single" collapsible>
-        <AccordionItem value={groupName || ""}>
+        <AccordionItem value={group?.groupName || ""}>
           <AccordionTrigger className="dark:text-white text-black">
-            {groupName}
+            {group?.groupName}
           </AccordionTrigger>
           <AccordionContent>
             <div className="hover:cursor-pointer dark:text-white text-black flex items-center gap-2 p-2">
